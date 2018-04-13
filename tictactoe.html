@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>TicTacToe: Template</title>
+    <style>
+        #board td {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<link rel="stylesheet" href="style sheet.css">
+<body>
+
+<ul>
+    <li><a href="index.html">Home Page</a></li>
+    <li><a class="active" href="blog.html">Blog</a></li>
+    <li><a href="vacation.html">The Perfect Trip</a></li>
+    <li><a href="wordguesser.html">Word Guesser Game</a></li>
+    <li><a href="tictactoe.html">Tic Tac Toe</a></li>
+    <li><a href="project3.html">About</a></li>
+    <li><a href="project4.html">Contact</a></li>
+</ul>
+
+
+<table id="board" border="1">
+</table>
+
+<div id="status">
+</div>
+
+<script>
+    var player = "X";
+    var board = [];
+    // Initialize to a 2D array of empty strings, 3x3
+    for (var row = 0; row < 3; row++) {
+        var cols = [];
+        for (var col = 0; col < 3; col++) {
+            cols.push(" ");
+        }
+        board.push(cols);
+    }
+
+    // Handles click by current player of row and col
+    var handleClick = function(row, col) {
+        if(board[row][col]===" "){
+            board[row][col]  = player;
+            if(player=="X"){
+                player = "O";
+            }
+            else {
+                player = "X"
+            }
+
+        }
+        // TODO: Check if move is valid (space is empty)
+        // TODO: If move is valid, update board array with player
+        // TODO: Toggle current player
+        updateBoardDisplay();
+        updateStatusDisplay();
+    };
+
+    // Returns winning player if found (X or O)
+    // If no winner, returns empty string
+    var checkForWinner = function() {
+        // TODO: Check for win of rows, cols, or diagonals
+        return "";
+    };
+
+    var setupClickListener = function() {
+        var boardTable = document.getElementById("board");
+        boardTable.addEventListener("click", function(event) {
+            if (event.target.nodeName !== "TD") {
+                return;
+            }
+            var cell = event.target;
+            var row = Number.parseInt(cell.getAttribute("data-row"), 10);
+            var col = Number.parseInt(cell.getAttribute("data-col"), 10);
+            handleClick(row, col);
+        });
+    };
+
+    var updateBoardDisplay = function() {
+        var boardTable = document.getElementById("board");
+        boardTable.innerHTML = "";
+        for (var row = 0; row < board.length; row++) {
+            var tableRow = document.createElement("tr");
+            for (var col = 0; col < board[row].length; col++) {
+                var cellTd = document.createElement("td");
+                cellTd.innerHTML = board[row][col];
+                cellTd.setAttribute("data-row", row);
+                cellTd.setAttribute("data-col", col);
+                tableRow.appendChild(cellTd);
+            }
+            boardTable.appendChild(tableRow);
+        }
+    };
+
+    var updateStatusDisplay = function() {
+        var statusDiv = document.getElementById("status");
+        var winner = checkForWinner();
+        if (winner) {
+            statusDiv.innerHTML = "Winner is " + winner;
+        } else {
+            statusDiv.innerHTML = "Current player is " + player;
+        }
+    };
+
+    setupClickListener();
+    updateBoardDisplay();
+    updateStatusDisplay();
+
+
+</script>
+</body>
+</html>
