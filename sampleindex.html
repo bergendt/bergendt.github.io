@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel = "stylesheet" href = "simp2.css">
+</head>
+<body>
+<h2>Major Events in U.S. History</h2>
+<div id = "score-display">
+</div>
+
+<ul id='timeline'>
+    <li class='work'>
+        <input class='radio' id='work5' name='works' type='radio' checked>
+        <div class="relative">
+            <label for='work5'>The Great Galveston Hurricane</label>
+            <span class='date'>September 1900</span>
+            <span class='circle'></span>
+        </div>
+        <div class='content'>
+            <p>
+                The Great Galveston Hurricane, known regionally as the Great Storm of 1900, was the deadliest natural disaster in United States history. The hurricane left between 6,000 and 12,000 fatalities in the United States; the number most cited in official reports is 8,000.
+            </p>
+            <form id="quiz-form1">
+
+                <fieldset>
+                    <legend><br>
+                        What was this storm classified as in the United States?</legend>
+                    <label><input name="question1" value="least" type="radio">The least deadly</label><br>
+                    <label><input name="question1" value="most" type="radio">The most deadly</label><br>
+                    <label><input name="question1" value="cool" type="radio">The coolest</label><br>
+                </fieldset>
+
+                <button type="submit">Check me</button>
+            </form>
+
+            <div id="results1"></div>
+
+            <script>
+                var score1 = 0;
+                var quizForm = document.getElementById("quiz-form1");
+                quizForm.addEventListener("submit", function(event) {
+                    event.preventDefault();
+
+
+                    var resultsDiv = document.getElementById("results1");
+
+
+                    var answer1 = document.querySelector('[name="question1"]:checked');
+                    if (!answer1) {
+                        resultsDiv.innerHTML = "You didn't check anything! Sadface";
+                    } else {
+
+                        if (answer1.value === "most") {
+                            resultsDiv.innerHTML = "You got it!";
+                            score1 = 1;
+                        } else {
+                            resultsDiv.innerHTML = "Try again!";
+                        }
+                    }
+
+                });
+
+
+            </script>
+        </div>
+    </li>
+    <li class='work'>
+        <input class='radio' id='work4' name='works' type='radio'>
+        <div class="relative">
+            <label for='work4'>The First World Series</label>
+            <span class='date'>1903</span>
+            <span class='circle'></span>
+        </div>
+        <div class='content'>
+            <p>
+                The 1903 World Series was the first modern World Series to be played in Major League Baseball. It matched the Boston Americans of the American League against the Pittsburgh Pirates of the National League in a best-of-nine series, with Boston prevailing five games to three, winning the last four.
+            </p>
+            <form id="quiz-form2">
+
+                <fieldset>
+                    <legend><br>
+                        Who played against Boston in the first World Series?</legend>
+                    <label><input name="question2" value="cavs" type="radio">Cavs</label><br>
+                    <label><input name="question2" value="pred" type="radio">Predators</label><br>
+                    <label><input name="question2" value="pirate" type="radio">Pirates</label><br>
+                </fieldset>
+
+                <button type="submit">Check me</button>
+            </form>
+
+            <div id="results2"></div>
+
+            <script>
+                var score2 = 0;
+                var quizForm = document.getElementById("quiz-form2");
+                quizForm.addEventListener("submit", function(event) {
+                    event.preventDefault();
+
+
+                    var resultsDiv = document.getElementById("results2");
+
+
+                    var answer2 = document.querySelector('[name="question2"]:checked');
+                    if (!answer2) {
+                        resultsDiv.innerHTML = "You didn't check anything! Sadface";
+                    } else {
+
+                        if (answer2.value === "pirate") {
+                            resultsDiv.innerHTML = "You got it!";
+                            score2 = 1
+                        } else {
+                            resultsDiv.innerHTML = "Try again!";
+                        }
+                    }
+
+                });
+
+
+            </script>
+        </div>
+    </li>
+    <li class='work'>
+        <input class='radio' id='work3' name='works' type='radio'>
+        <div class="relative">
+            <label for='work3'>1906 San Francisco Earthquake</label>
+            <span class='date'>April 18th 1906</span>
+            <span class='circle'></span>
+        </div>
+        <div class='content'>
+            <p>
+                The 1906 San Francisco earthquake struck the coast of Northern California at 5:12 a.m. on Wednesday, April 18 with an estimated moment magnitude of 7.9 and a maximum Mercalli intensity of XI (Extreme). The events are remembered as one of the worst and deadliest earthquakes in the history of the United States.
+            </p>
+            <form id="quiz-form3">
+
+                <fieldset>
+                    <legend><br>
+                        What was the magnitude of the Earthquake?</legend>
+                    <label><input name="question3" value="12" type="radio">12.4</label><br>
+                    <label><input name="question3" value="6" type="radio">6.9</label><br>
+                    <label><input name="question3" value="7" type="radio">7.9</label><br>
+                </fieldset>
+
+                <button type="submit">Check me</button>
+            </form>
+
+            <div id="results3"></div>
+
+            <script>
+                var score3 = 0;
+                var quizForm = document.getElementById("quiz-form3");
+                quizForm.addEventListener("submit", function(event) {
+                    event.preventDefault();
+
+
+                    var resultsDiv = document.getElementById("results3");
+
+
+                    var answer3 = document.querySelector('[name="question3"]:checked');
+                    if (!answer3) {
+                        resultsDiv.innerHTML = "You didn't check anything! Sadface";
+                    } else {
+
+                        if (answer3.value === "7") {
+                            resultsDiv.innerHTML = "You got it!";
+                            score3 = 1
+                        } else {
+                            resultsDiv.innerHTML = "Try again!";
+                        }
+                    }
+
+                });
+
+
+            </script>
+        </div>
+    </li>
+    <li class='work'>
+        <input class='radio' id='work2' name='works' type='radio'>
+        <div class="relative">
+            <label for='work2'>The Sinking of the Titanic</label>
+            <span class='date'>April 15th 1912</span>
+            <span class='circle'></span>
+        </div>
+        <div class='content'>
+            <p>
+                At 2:20 a.m. on April 15, 1912, the British ocean liner Titanic sinks into the North Atlantic Ocean about 400 miles south of Newfoundland, Canada. The massive ship, which carried 2,200 passengers and crew, had struck an iceberg two and half hours before.
+            </p>
+            <form id="quiz-form4">
+
+                <fieldset>
+                    <legend><br>
+                        At what time did the Titanic sink?</legend>
+                    <label><input name="question4" value="pm" type="radio">2:20 p.m.</label><br>
+                    <label><input name="question4" value="am" type="radio">2:20 a.m.</label><br>
+                    <label><input name="question4" value="chief" type="radio">4:20 a.m.</label><br>
+                </fieldset>
+
+                <button type="submit">Check me</button>
+            </form>
+
+            <div id="results4"></div>
+
+            <script>
+                var score4 = 0;
+                var quizForm = document.getElementById("quiz-form4");
+                quizForm.addEventListener("submit", function(event) {
+                    event.preventDefault();
+
+
+                    var resultsDiv = document.getElementById("results4");
+
+
+                    var answer4 = document.querySelector('[name="question4"]:checked');
+                    if (!answer4) {
+                        resultsDiv.innerHTML = "You didn't check anything! Sadface";
+                    } else {
+
+                        if (answer4.value === "am") {
+                            resultsDiv.innerHTML = "You got it!";
+                            score4 = 1
+                        } else {
+                            resultsDiv.innerHTML = "Try again!";
+                        }
+                    }
+
+                });
+
+
+            </script>
+        </div>
+    </li>
+    <li class='work'>
+        <input class='radio' id='work1' name='works' type='radio'>
+        <div class="relative">
+            <label for='work1'>US involvment in the 2nd World War</label>
+            <span class='date'>December 7th 1941</span>
+            <span class='circle'></span>
+        </div>
+        <div class='content'>
+            <p>
+                World War II (1939-1945) was the largest armed conflict in human history. Although the war began with Nazi Germany's attack on Poland in September 1939, the United States did not enter the war until after the Japanese bombed the American fleet in Pearl Harbor, Hawaii, on December 7, 1941.
+            </p>
+            <form id="quiz-form5">
+
+                <fieldset>
+                    <legend><br>
+                        What country made the US get involved in the 2nd World War?</legend>
+                    <label><input name="question5" value="russia" type="radio">Russia</label><br>
+                    <label><input name="question5" value="poland" type="radio">Poland</label><br>
+                    <label><input name="question5" value="japan" type="radio">Japan</label><br>
+                </fieldset>
+
+                <button type="submit">Check me</button>
+            </form>
+
+            <div id="results5"></div>
+
+            <script>
+                var score5 = 0;
+                var quizForm = document.getElementById("quiz-form5");
+                quizForm.addEventListener("submit", function(event) {
+                    event.preventDefault();
+
+
+                    var resultsDiv = document.getElementById("results5");
+
+
+                    var answer5 = document.querySelector('[name="question5"]:checked');
+                    if (!answer5) {
+                        resultsDiv.innerHTML = "You didn't check anything! Sadface";
+                    } else {
+
+                        if (answer5.value === "japan") {
+                            resultsDiv.innerHTML = "You got it!";
+                            score5 = score1 + score2 + score3 + score4 + 1
+                        } else {
+                            resultsDiv.innerHTML = "Try again!";
+                        }
+                    }
+                    document.getElementById("score-display").innerHTML = "score: " + score5 / 5 * 100 + "%";
+                });
+
+
+            </script>
+        </div>
+    </li>
+</ul>
+</body>
+</html>
